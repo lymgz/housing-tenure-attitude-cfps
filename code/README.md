@@ -13,13 +13,13 @@ Step 1 — build the Stata files from the integrated database (once per data cha
 step 2 and let it happen; the manual command is:
 
     conda activate lym313
-    cd "C:\bgy\C-documents\碧桂园\综合管理\职称\博士相关\UPM\The Folk Economics of Housing\code\By_stata"
+    cd "<project_root>\code\By_stata"
     python 10_export_from_db.py
 
 Step 2 — run the Stata scripts:
 
     cd "...\code\By_stata"
-    & "C:\Softwares\Stata18\StataMP-64.exe" /e do 00_master.do
+    & "<stata_installation>\StataMP-64.exe" /e do 00_master.do
 
 In the Stata GUI, open 00_master.do and press Execute (Ctrl+D).
 The log is _logs/00_master.log.
@@ -44,7 +44,7 @@ _logs/raw_file_inventory.csv.
 ## 3. Where the data comes from
 
     original survey files                    integrated database               Stata
-    C:\Downloads\BaiduNetdiskDownload\
+    <raw_survey_download_root>\
       cfps数据集\2010 ... 2022        \
       CGSS原始数据\                    >  housing_existing_data.v2.1.db  >  _derived\*.dta
       chfs原始数据\                   /   (read-only, 72 tables)             (one per table)
